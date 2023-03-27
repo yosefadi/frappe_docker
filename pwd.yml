@@ -9,7 +9,7 @@ services:
     volumes:
     - sites:/home/frappe/frappe-bench/sites
     - logs:/home/frappe/frappe-bench/logs
-    network:
+    networks:
     - gateway_proxymanager
 
   configurator:
@@ -33,7 +33,7 @@ services:
     volumes:
     - sites:/home/frappe/frappe-bench/sites
     - logs:/home/frappe/frappe-bench/logs
-    network:
+    networks:
     - gateway_proxymanager
 
   create-site:
@@ -60,7 +60,7 @@ services:
           exit 1
         fi
       done; echo "sites/common_site_config.json found"; bench new-site frontend --no-mariadb-socket --admin-password=admin --db-root-password=admin --install-app erpnext --set-default;
-    network:
+    networks:
     - gateway_proxymanager
 
   db:
@@ -81,7 +81,7 @@ services:
       MYSQL_ROOT_PASSWORD: admin
     volumes:
     - db-data:/var/lib/mysql
-    network:
+    networks:
     - gateway_proxymanager
 
   frontend:
@@ -103,7 +103,7 @@ services:
     volumes:
     - sites:/home/frappe/frappe-bench/sites
     - logs:/home/frappe/frappe-bench/logs
-    network:
+    networks:
     - gateway_proxymanager
 
   queue-default:
@@ -119,7 +119,7 @@ services:
     volumes:
     - sites:/home/frappe/frappe-bench/sites
     - logs:/home/frappe/frappe-bench/logs
-    network:
+    networks:
     - gateway_proxymanager
 
   queue-long:
@@ -135,7 +135,7 @@ services:
     volumes:
     - sites:/home/frappe/frappe-bench/sites
     - logs:/home/frappe/frappe-bench/logs
-    network:
+    networks:
     - gateway_proxymanager
 
   queue-short:
@@ -151,7 +151,7 @@ services:
     volumes:
     - sites:/home/frappe/frappe-bench/sites
     - logs:/home/frappe/frappe-bench/logs
-    network:
+    networks:
     - gateway_proxymanager
 
   redis-queue:
@@ -161,7 +161,7 @@ services:
         condition: on-failure
     volumes:
     - redis-queue-data:/data
-    network:
+    networks:
     - gateway_proxymanager
 
   redis-cache:
@@ -171,7 +171,7 @@ services:
         condition: on-failure
     volumes:
     - redis-cache-data:/data
-    network:
+    networks:
     - gateway_proxymanager
 
   redis-socketio:
@@ -181,7 +181,7 @@ services:
         condition: on-failure
     volumes:
     - redis-socketio-data:/data
-    network:
+    networks:
     - gateway_proxymanager
 
   scheduler:
@@ -195,7 +195,7 @@ services:
     volumes:
     - sites:/home/frappe/frappe-bench/sites
     - logs:/home/frappe/frappe-bench/logs
-    network:
+    networks:
     - gateway_proxymanager
 
   websocket:
@@ -209,7 +209,7 @@ services:
     volumes:
     - sites:/home/frappe/frappe-bench/sites
     - logs:/home/frappe/frappe-bench/logs
-    network:
+    networks:
     - gateway_proxymanager
 
 volumes:
