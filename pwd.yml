@@ -2,7 +2,7 @@ version: "3"
 
 services:
   backend:
-    image: frappe/erpnext:v14.19.0
+    image: frappe/erpnext:v14.20.0
     deploy:
       restart_policy:
         condition: on-failure
@@ -13,7 +13,7 @@ services:
     - gateway_proxymanager
 
   configurator:
-    image: frappe/erpnext:v14.19.0
+    image: frappe/erpnext:v14.20.0
     deploy:
       restart_policy:
         condition: none
@@ -37,7 +37,7 @@ services:
     - gateway_proxymanager
 
   create-site:
-    image: frappe/erpnext:v14.19.0
+    image: frappe/erpnext:v14.20.0
     deploy:
       restart_policy:
         condition: none
@@ -85,7 +85,7 @@ services:
     - gateway_proxymanager
 
   frontend:
-    image: frappe/erpnext:v14.19.0
+    image: frappe/erpnext:v14.20.0
     deploy:
       restart_policy:
         condition: on-failure
@@ -107,7 +107,7 @@ services:
     - gateway_proxymanager
 
   queue-default:
-    image: frappe/erpnext:v14.19.0
+    image: frappe/erpnext:v14.20.0
     deploy:
       restart_policy:
         condition: on-failure
@@ -123,7 +123,7 @@ services:
     - gateway_proxymanager
 
   queue-long:
-    image: frappe/erpnext:v14.19.0
+    image: frappe/erpnext:v14.20.0
     deploy:
       restart_policy:
         condition: on-failure
@@ -139,7 +139,7 @@ services:
     - gateway_proxymanager
 
   queue-short:
-    image: frappe/erpnext:v14.19.0
+    image: frappe/erpnext:v14.20.0
     deploy:
       restart_policy:
         condition: on-failure
@@ -185,7 +185,7 @@ services:
     - gateway_proxymanager
 
   scheduler:
-    image: frappe/erpnext:v14.19.0
+    image: frappe/erpnext:v14.20.0
     deploy:
       restart_policy:
         condition: on-failure
@@ -199,7 +199,7 @@ services:
     - gateway_proxymanager
 
   websocket:
-    image: frappe/erpnext:v14.19.0
+    image: frappe/erpnext:v14.20.0
     deploy:
       restart_policy:
         condition: on-failure
